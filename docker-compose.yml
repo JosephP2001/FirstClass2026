@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build: ./frontend
+    ports: ["5173:5173"]
+    depends_on: [backend]
+
+  backend:
+    build: ./backend
+    ports: ["3000:3000"]
+    depends_on: [mongo]
+    environment:
+      MONGO_URI: mongodb://mongo:27017/mydb
+
+  mongo:
+    image: mongo:7
+    volumes:
+      - db-data:/data/db
+
+volumes:
+  db-data:
