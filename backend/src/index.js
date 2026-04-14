@@ -8,9 +8,9 @@ app.use(express.json())
 
 mongoose.connect(process.env.MONGO_URI)
 
-const Post = mongoose.model('Post', { title: String })
+const Search = mongoose.model('Search', { name: String, date: { type: Date, default: Date.now } })
 
-app.get('/posts', async (req, res) => res.json(await Post.find()))
-app.post('/posts', async (req, res) => res.json(await Post.create(req.body)))
+app.get('/searches', async (req, res) => res.json(await Search.find().sort({ date: -1 })))
+app.post('/searches', async (req, res) => res.json(await Search.create(req.body)))
 
 app.listen(3000, () => console.log('Backend running'))
