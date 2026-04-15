@@ -10,6 +10,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 const Search = mongoose.model('Search', { name: String, date: { type: Date, default: Date.now } })
 
+/*First CHANGE*/
 app.get('/searches', async (req, res) => res.json(await Search.find().sort({ date: -1 })))
 app.post('/searches', async (req, res) => res.json(await Search.create(req.body)))
 
