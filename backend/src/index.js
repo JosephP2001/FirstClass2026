@@ -7,7 +7,7 @@ app.use(cors())
 app.use(express.json())
 
 mongoose.connect(process.env.MONGO_URI)
-
+/*CHANGE for refactor*/
 const Search = mongoose.model('Search', { name: String, date: { type: Date, default: Date.now } })
 
 app.get('/searches', async (req, res) => res.json(await Search.find().sort({ date: -1 })))
