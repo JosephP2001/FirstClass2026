@@ -13,5 +13,5 @@ const Search = mongoose.model('Search', { name: String, date: { type: Date, defa
 /*First CHANGE*/
 app.get('/searches', async (req, res) => res.json(await Search.find().sort({ date: -1 })))
 app.post('/searches', async (req, res) => res.json(await Search.create(req.body)))
-
+/*SECOND CHANGE*/
 app.listen(3000, () => console.log('Backend running'))
