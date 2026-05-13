@@ -14,7 +14,7 @@
   <ul id="history"></ul>
 
   <script>
-    const BACKEND = 'http://localhost:3000'
+    const BACKEND = 'http://${window.location.hostname}:3000'
 
     async function search() {
       const name = document.getElementById('input').value.toLowerCase()
