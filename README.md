@@ -145,55 +145,55 @@ Cada rama genera su propio tag de imagen en DockerHub:
 
 | Rama | Tag de imagen | Descripción |
 |------|--------------|-------------|
-| dev | `usuario/pokesearch-frontend:dev-v1.0` | Build de desarrollo |
-| dev | `usuario/pokesearch-backend:dev-v1.0` | Build de desarrollo |
-| QA | `usuario/pokesearch-frontend:qa-v1.0` | Validado en QA |
-| QA | `usuario/pokesearch-backend:qa-v1.0` | Validado en QA |
-| master | `usuario/pokesearch-frontend:prod-v1.0` | Producción |
-| master | `usuario/pokesearch-backend:prod-v1.0` | Producción |
-| master | `usuario/pokesearch-frontend:latest` | Sinónimo de prod |
-| master | `usuario/pokesearch-backend:latest` | Sinónimo de prod |
+| dev | `josephp2001/pokesearch-frontend:dev-v1.0` | Build de desarrollo |
+| dev | `josephp2001/pokesearch-backend:dev-v1.0` | Build de desarrollo |
+| QA | `josephp2001/pokesearch-frontend:qa-v1.0` | Validado en QA |
+| QA | `josephp2001/pokesearch-backend:qa-v1.0` | Validado en QA |
+| master | `josephp2001/pokesearch-frontend:prod-v1.0` | Producción |
+| master | `josephp2001/pokesearch-backend:prod-v1.0` | Producción |
+| master | `josephp2001/pokesearch-frontend:latest` | Sinónimo de prod |
+| master | `josephp2001/pokesearch-backend:latest` | Sinónimo de prod |
 
 ### Comandos de build y push por rama
 
 **Dev:**
 ```bash
-docker build -t usuario/pokesearch-frontend:dev-v1.0 ./frontend
-docker build -t usuario/pokesearch-backend:dev-v1.0 ./backend
-docker tag usuario/pokesearch-frontend:dev-v1.0 usuario/pokesearch-frontend:dev
-docker tag usuario/pokesearch-backend:dev-v1.0 usuario/pokesearch-backend:dev
-docker push usuario/pokesearch-frontend:dev-v1.0
-docker push usuario/pokesearch-frontend:dev
-docker push usuario/pokesearch-backend:dev-v1.0
-docker push usuario/pokesearch-backend:dev
+docker build -t josephp2001/pokesearch-frontend:dev-v1.0 ./frontend
+docker build -t josephp2001/pokesearch-backend:dev-v1.0 ./backend
+docker tag josephp2001/pokesearch-frontend:dev-v1.0 josephp2001/pokesearch-frontend:dev
+docker tag josephp2001/pokesearch-backend:dev-v1.0 josephp2001/pokesearch-backend:dev
+docker push josephp2001/pokesearch-frontend:dev-v1.0
+docker push josephp2001/pokesearch-frontend:dev
+docker push josephp2001/pokesearch-backend:dev-v1.0
+docker push josephp2001/pokesearch-backend:dev
 ```
 
 **QA:**
 ```bash
-docker pull usuario/pokesearch-frontend:dev-v1.0
-docker pull usuario/pokesearch-backend:dev-v1.0
-docker tag usuario/pokesearch-frontend:dev-v1.0 usuario/pokesearch-frontend:qa-v1.0
-docker tag usuario/pokesearch-backend:dev-v1.0 usuario/pokesearch-backend:qa-v1.0
-docker tag usuario/pokesearch-frontend:qa-v1.0 usuario/pokesearch-frontend:qa
-docker tag usuario/pokesearch-backend:qa-v1.0 usuario/pokesearch-backend:qa
-docker push usuario/pokesearch-frontend:qa-v1.0
-docker push usuario/pokesearch-frontend:qa
-docker push usuario/pokesearch-backend:qa-v1.0
-docker push usuario/pokesearch-backend:qa
+docker pull josephp2001/pokesearch-frontend:dev-v1.0
+docker pull josephp2001/pokesearch-backend:dev-v1.0
+docker tag josephp2001/pokesearch-frontend:dev-v1.0 josephp2001/pokesearch-frontend:qa-v1.0
+docker tag josephp2001/pokesearch-backend:dev-v1.0 josephp2001/pokesearch-backend:qa-v1.0
+docker tag josephp2001/pokesearch-frontend:qa-v1.0 josephp2001/pokesearch-frontend:qa
+docker tag josephp2001/pokesearch-backend:qa-v1.0 josephp2001/pokesearch-backend:qa
+docker push josephp2001/pokesearch-frontend:qa-v1.0
+docker push josephp2001/pokesearch-frontend:qa
+docker push josephp2001/pokesearch-backend:qa-v1.0
+docker push josephp2001/pokesearch-backend:qa
 ```
 
 **Prod (master):**
 ```bash
-docker pull usuario/pokesearch-frontend:qa-v1.0
-docker pull usuario/pokesearch-backend:qa-v1.0
-docker tag usuario/pokesearch-frontend:qa-v1.0 usuario/pokesearch-frontend:prod-v1.0
-docker tag usuario/pokesearch-backend:qa-v1.0 usuario/pokesearch-backend:prod-v1.0
-docker tag usuario/pokesearch-frontend:prod-v1.0 usuario/pokesearch-frontend:latest
-docker tag usuario/pokesearch-backend:prod-v1.0 usuario/pokesearch-backend:latest
-docker push usuario/pokesearch-frontend:prod-v1.0
-docker push usuario/pokesearch-frontend:latest
-docker push usuario/pokesearch-backend:prod-v1.0
-docker push usuario/pokesearch-backend:latest
+docker pull josephp2001/pokesearch-frontend:qa-v1.0
+docker pull josephp2001/pokesearch-backend:qa-v1.0
+docker tag josephp2001/pokesearch-frontend:qa-v1.0 josephp2001/pokesearch-frontend:prod-v1.0
+docker tag josephp2001/pokesearch-backend:qa-v1.0 josephp2001/pokesearch-backend:prod-v1.0
+docker tag josephp2001/pokesearch-frontend:prod-v1.0 josephp2001/pokesearch-frontend:latest
+docker tag josephp2001/pokesearch-backend:prod-v1.0 josephp2001/pokesearch-backend:latest
+docker push josephp2001/pokesearch-frontend:prod-v1.0
+docker push josephp2001/pokesearch-frontend:latest
+docker push josephp2001/pokesearch-backend:prod-v1.0
+docker push josephp2001/pokesearch-backend:latest
 ```
 
 ## Sincronizar con GitHub (forzar sobreescritura local)
